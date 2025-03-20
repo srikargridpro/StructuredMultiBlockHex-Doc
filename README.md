@@ -47,8 +47,12 @@ int i = 1, j = 2, k = 3;
 coord node = blk.C[i][j][k];
 std::cout << "Node at (" << i << ", " << j << ", " << k << ") = " << node << std::endl;
 
-// Resize operation (assuming scale factor as parameter)
+// Resize operation 
 blk.resize(x,y,z);
+(assuming scale factor as parameter)
+blk.resize(scale_factor);
+
+
 ```
 
 ### Exploring Grid Connectivity via Block Faces
