@@ -41,7 +41,6 @@ for (auto& block : myGrid->get_blocks()) {
 ```cpp
 // Get a specific block and access its node coordinates
 StructuredMultiBlockHex::block& blk = myGrid->get_blocks().front();
-std::vector<double> node_coords = blk.block_node_coords;
 
 // Access nodes using the 3D matrix representation (Coord*** C)
 int i = 1, j = 2, k = 3;
