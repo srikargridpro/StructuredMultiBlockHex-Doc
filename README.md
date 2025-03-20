@@ -15,7 +15,7 @@ StructuredMultiBlockHex is a C++ library for handling structured multi-block hex
 To use this library, include the header and link the necessary dependencies:
 ```sh
 # Example build command
-g++ -o my_app my_source.cpp -I./include -L./lib -lstructuredhex
+// To be done
 ```
 
 ## Usage
