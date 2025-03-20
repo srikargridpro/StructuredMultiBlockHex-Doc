@@ -26,14 +26,14 @@ To use this library, include the header and link the necessary dependencies:
 
 // Initialize the grid and load from file
 StructuredMultiBlockHex* myGrid = new StructuredMultiBlockHex("GridFileName");
-myGrid->_ReadGridFile("grid_data.dat");
+myGrid->_ReadGridFile("cylinder_grid.tmp");
 ```
 
 ### Looping Through Each Block
 ```cpp
 // Iterate through all blocks in the grid
 for (auto& block : myGrid->get_blocks()) {
-    std::cout << "Processing Block ID: " << block.get_id() << std::endl;
+    std::cout << "Processing Block ID: " << block.get_BlockID() << std::endl;
 }
 ```
 
