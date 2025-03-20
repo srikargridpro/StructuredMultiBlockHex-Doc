@@ -49,7 +49,7 @@ coord node = blk.C[i][j][k];
 std::cout << "Node at (" << i << ", " << j << ", " << k << ") = " << node << std::endl;
 
 // Resize operation (assuming scale factor as parameter)
-blk.resize(2.0);
+blk.resize(x,y,z);
 ```
 
 ### Exploring Grid Connectivity via Block Faces
@@ -58,9 +58,9 @@ blk.resize(2.0);
 for (auto& block : myGrid->get_blocks()) {
     for (int i = 0; i < 6; ++i) { // Loop through all block faces
         StructuredMultiBlockHex::blockface& face = block.f[i];
-        StructuredMultiBlockHex::block* neighbor = face.get_pair();
+        StructuredMultiBlockHex::block* neighbor = face.get_pair()->get_ContainingBlock();
         if (neighbor) {
-            std::cout << "Block has neighbor on face " << i << " with ID: " << neighbor->get_id() << std::endl;
+            std::cout << "Block has neighbor on face " << i << " with ID: " << neighbor->get_BlockID() << std::endl;
         }
     }
 }
@@ -70,17 +70,12 @@ for (auto& block : myGrid->get_blocks()) {
 ```cpp
 // Extract surface-facing quads from block faces
 std::vector<Quad> surface_quads;
-for (auto& block : myGrid->get_blocks()) {
-    for (int i = 0; i < 6; ++i) {
-        if (block.f[i].is_surface()) {
-            surface_quads.push_back(block.f[i].extract_quad());
-        }
-    }
-}
+void write_faces_as_quad(const std::set<StructuredMultiBlockHex::blockFace *> &faces,
+                             const char *quad_filename, const bool &barebone_faces) const;
 ```
 
 ### Writing the Grid Data to a File
 ```cpp
 // Write the grid structure to a file
-myGrid->write_to_file("output_grid.dat");
+myGrid->Write("output_grid.tmp");
 ```
