@@ -1,7 +1,7 @@
 # StructuredMultiBlockHex-Doc
 Documentation for GridPro MultiBlock Data structure
 
-StructuredMultiBlockHex is a C++ library for handling structured multi-block hexahedral grids. This library provides functionality for grid initialization, block traversal, connectivity exploration, and file I/O.
+StructuredMultiBlockHex is a GridPro C++ module for handling structured multi-block hexahedral grids. This library provides functionality for grid initialization, block traversal, connectivity exploration, and file I/O.
 
 ## Features
 - Load structured multi-block hex grids from a file.
@@ -22,7 +22,7 @@ To use this library, include the header and link the necessary dependencies:
 
 ### Initializing the Grid Data Structure & Loading a Grid File
 ```cpp
-#include "StructuredMultiBlockHex.h"
+#include "StructuredMultiBlockHex.hpp"
 
 // Initialize the grid and load from file
 StructuredMultiBlockHex* myGrid = new StructuredMultiBlockHex("GridFileName");
